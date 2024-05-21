@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<title> Creiamo Una Storia Originale</title>
+</head>
+
+<body>
+	<h1>Creiamo Una Storia Originale</h1>
+	<h4>オリジナルの童話を作ろう</h4>
+
+
+	<h3 th:text="${pre_title}"></h3>
+<!--	<h3>さあ、あなたの冒険が始まるよ！</h3>-->
+	<h3 th:text = "'さあ、' + ${name} + '！　キミの冒険が始まるよ！'"></h3>
+
+<!--	<div th:object="${formValidation}">-->
+<!--		<h4>名前は: <span th:text="*{name}"></span>です</h4>-->
+<!--		<h4>年齢は: <span th:text="*{age}"></span>です</h4>-->
+<!--		<h4>好きな都市は: <span th:text="*{favCity}"></span>です</h4>-->
+<!--		<h4>好きな食べ物は: <span th:text="*{favFood}"></span>です</h4>-->
+<!--		<h4>趣味は: <span th:text="*{hobby}"></span>です</h4>-->
+<!--	</div>-->
+
+<!--	<form action="/pre_start" method="post">-->
+<!--		<input type="submit" value="戻って編集する">-->
+<!--	</form>-->
+
+<!--	<form action="/start" method="post">-->
+<!--		<input type="submit" value="これでOK！">-->
+<!--	</form>-->
+
+</body>
+
+</html>

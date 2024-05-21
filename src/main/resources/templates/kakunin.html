@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<title> Creiamo Una Storia Originale</title>
+
+	<style>
+		table {
+		    width: 100%;
+		    border-collapse: collapse;
+		    background-color: #ffffff; /* 表の背景色を白に設定 */
+		}
+		
+		th, td {
+		    padding: 12px;
+		    text-align: left;
+		    border-bottom: 1px solid #ddd; /* 各項目にボーダーラインを追加 */
+		}
+		
+		th {
+		    background-color: #f2f2f2;
+		}
+		
+		tr:hover {
+		    background-color: rgb(248, 248, 248);
+		}
+		
+		th, td {
+		    padding: 12px;
+		    text-align: left;
+		    border-bottom: 1px solid #ddd; /* 下部の境界線 */
+		    border-radius: 6px; /* 角を丸くする */
+		}
+		
+		/* 最後の行には境界線を表示しない */
+		tr:last-child td {
+		    border-bottom: none;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h1>プレイヤーデータ一覧</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>名前</th>
+			<th>年齢</th>
+			<th>好きな都市</th>
+			<th>好きな食べ物</th>
+			<th>趣味</th>
+		</tr>
+		<!-- データを表示 -->
+		<th:block th:each="inputForm : ${inputForms}">
+			<tr>
+				<td th:text="${inputForm.id}"></td>
+				<td th:text="${inputForm.name}"></td>
+				<td th:text="${inputForm.age}"></td>
+				<td th:text="${inputForm.favCity}"></td>
+				<td th:text="${inputForm.favFood}"></td>
+				<td th:text="${inputForm.hobby}"></td>
+			</tr>
+		</th:block>
+	</table>
+</body>
+
+</html>

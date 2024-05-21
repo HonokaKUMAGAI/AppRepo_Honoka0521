@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<title> Creiamo Una Storia Originale</title>
+
+	<style>
+		form {
+			
+			padding: 20px;
+			border-radius: 10px;
+			/* 角丸 */
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			/* 影 */
+			margin: 20px auto;
+			/* フォームを中央に配置 */
+			max-width: 400px;
+			/* フォームの最大幅 */
+			display: flex;
+			/* ボタンを横並びに配置 */
+			justify-content: space-between;
+			/* ボタンを等間隔に配置 */
+			align-items: center;
+			/* ボタンを中央に配置 */
+		}
+
+		label {
+			font-weight: bold;
+			color: #4a4a4a;
+			/* ラベルのテキストカラー */
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			/* ボタンの背景色 */
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 40%;
+			/* ボタンの幅 */
+		}
+
+		input[type="submit"]:hover {
+			background-color: #45a049;
+			/* ホバー時の背景色 */
+		}
+
+		div th {
+			color: #4CAF50;
+			/* 回答内容のテキストカラー */
+			font-size: 18px;
+			/* フォントサイズを大きく */
+			display: block;
+			/* spanをブロック要素にすることで、1つの行で表示 */
+			margin-top: 10px;
+			/* 上部の余白 */
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Creiamo Una Storia Originale</h1>
+	<h4>オリジナルの童話を作ろう</h4>
+
+
+	<!--    <h3 th:text="${greeting}">ここにはご挨拶が入ります</h3>-->
+	<!--	<h2 th:text="'ようこそ' + ${user.name} + 'さん！'"></h2>-->
+
+
+	<!--	<h2>ようこそ！今日はどんな物語を作りますか？</h2>-->
+
+	<h3 th:text="${pre_title}"></h3>
+
+	<div th:object="${formValidation}">
+		<h4>名前は: <span th:text="*{name}"></span>です</h4>
+		<h4>年齢は: <span th:text="*{age}"></span>歳です</h4>
+		<h4>好きな都市は: <span th:text="*{favCity}"></span>です</h4>
+		<h4>好きな食べ物は: <span th:text="*{favFood}"></span>です</h4>
+		<h4>趣味は: <span th:text="*{hobby}"></span>です</h4>
+	</div>
+
+	<form action="/" method="post">
+		<input type="submit" value="戻って編集する">
+	</form>
+
+	<form action="/start" method="post">
+		<input type="submit" value="これでOK！">
+	</form>
+
+</body>
+
+</html>

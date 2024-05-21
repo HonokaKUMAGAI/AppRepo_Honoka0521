@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<title> Creiamo Una Storia Originale</title>
+</head>
+
+<body>
+	<h1>Creiamo Una Storia Originale</h1>
+	<h4>オリジナルの童話を作ろう</h4>
+	<p>このサイトは、あなたの入力した情報と、あなたの選んだ道から、自分だけの童話を作れます。
+		<br>素敵な物語を作りましょう！
+	</p>
+
+	<!--    <h3 th:text="${greeting}">ここにはご挨拶が入ります</h3>-->
+	<!--	<h2 th:text="'ようこそ' + ${user.name} + 'さん！'"></h2>-->
+	<h3 th:text="${title}"></h3>
+	<h3 th:text="${pre_title}"></h3>
+	<!--	<h3 th:text="${greating1}">ここには挨拶１が入ります</h3>-->
+
+	<form th:action="@{/pre_start}" th:object="${formValidation}" method="post">
+		<div>
+			<label for="name">名前:</label>
+			<input type="text" name="name" th:field="*{name}" />
+			<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></div>
+		</div>
+
+		<div>
+			<label for="age">年齢:</label>
+			<input type="text" name="age" th:field="*{age}" />
+			<div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" style="color: red;"></div>
+		</div>
+
+		<div>
+			<label for="favCity">好きな都市:</label>
+			<select id="favCity" name="favCity">
+				<optgroup label="イタリア">
+					<option value="sicily" th:selected="${formValidation.favCity == 'sicily'}">シシリー</option>
+					<option value="florence" th:selected="${formValidation.favCity == 'florence'}">フィレンツェ</option>
+					<option value="naples" th:selected="${formValidation.favCity == 'naples'}">ナポリ</option>
+					<option value="rome" th:selected="${formValidation.favCity == 'rome'}">ローマ</option>
+					<option value="milan" th:selected="${formValidation.favCity == 'milan'}">ミラノ</option>
+				</optgroup>
+				<optgroup label="日本">
+					<option value="tokyo" th:selected="${formValidation.favCity == 'tokyo'}">東京</option>
+					<option value="osaka" th:selected="${formValidation.favCity == 'osaka'}">大阪</option>
+					<option value="kyoto" th:selected="${formValidation.favCity == 'kyoto'}">京都</option>
+					<option value="sapporo" th:selected="${formValidation.favCity == 'sapporo'}">札幌</option>
+					<option value="nagoya" th:selected="${formValidation.favCity == 'nagoya'}">名古屋</option>
+				</optgroup>
+				<optgroup label="アメリカ">
+					<option value="newyork" th:selected="${formValidation.favCity == 'newyork'}">ニューヨーク</option>
+					<option value="losangeles" th:selected="${formValidation.favCity == 'losangeles'}">ロサンゼルス</option>
+					<option value="chicago" th:selected="${formValidation.favCity == 'chicago'}">シカゴ</option>
+					<option value="houston" th:selected="${formValidation.favCity == 'houston'}">ヒューストン</option>
+					<option value="miami" th:selected="${formValidation.favCity == 'miami'}">マイアミ</option>
+				</optgroup>
+			</select>
+
+			<div th:if="${#fields.hasErrors('favFood')}" th:errors="*{favCity}" style="color: red;"></div>
+		</div>
+
+		<div>
+			<label for="favFood">好きな食べ物:</label>
+			<input type="text" name="favFood" th:field="*{favFood}" />
+			<div th:if="${#fields.hasErrors('favFood')}" th:errors="*{favFood}" style="color: red;"></div>
+		</div>
+		<div>
+			<label for="hobby">趣味:</label>
+			<input type="text" name="hobby" th:field="*{hobby}" />
+			<div th:if="${#fields.hasErrors('hobby')}" th:errors="*{hobby}" style="color: red;"></div>
+		</div>
+		<div>
+			<button type="submit">オッケー！</button>
+		</div>
+	</form>
+
+</body>
+
+</html>
