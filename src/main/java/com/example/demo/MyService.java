@@ -18,6 +18,18 @@ public class MyService {
     public Optional<InputForm> getLastUserInput(int id) {
         return playerRepository.findById(id);
     }
+    
+    
+    private final WeatherService weatherService;
+
+    public MyService(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
+
+//    public WeatherData fetchWeather(String city) {
+//        String apiUrl = String.format("%s?q=%s&appid=%s", API_BASE_URL, city, API_KEY);
+//        return restTemplate.getForObject(apiUrl, WeatherData.class);
+//    }
 
 	
 

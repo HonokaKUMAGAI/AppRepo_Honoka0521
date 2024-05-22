@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<title> Creiamo Una Storia Originale</title>
+</head>
+
+<body>
+	
+	<h1>Creiamo Una Storia Originale</h1>
+		<h4>オリジナルの童話を作ろう</h4>
+		<p>このサイトは、あなたの入力した情報と、あなたの選んだ道から、自分だけの童話を作れます。
+			<br>素敵な物語を作りましょう！
+		</p>
+	<h1 th:text="'今日の'+${name}+'の物語'"></h1>
+	    <h4 th:text="'今日の'+${favCity}+'の天気は' + ${weatherDescription} + 'です。'"></h4>
+		<h4 th:text="'今日の天気は' + ${temperature} + 'です。'"></h4>
+</body>
+
+</html>
