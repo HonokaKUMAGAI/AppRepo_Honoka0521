@@ -137,10 +137,11 @@ public class MyController {
         // 天気情報をモデルにセット
         if(weatherData != null) {
             String weatherDescription = weatherData.getWeather()[0].getMain();
-            double temperature = weatherData.getMain().getTemp() - 273.15; // Kelvin to Celsius
+            double pre_temperature = weatherData.getMain().getTemp() - 273.15; // Kelvin to Celsius
+            double temparature = Math.round(pre_temperature * 10) / 10.0;
             double humidity = weatherData.getMain().getHumidity();
             model.addAttribute("weatherDescription", weatherDescription);
-            model.addAttribute("temperature", temperature);
+            model.addAttribute("temperature", temparature);
             model.addAttribute("humidity", humidity);
         } else {
             // 天気情報が取得できなかった場合の処理
